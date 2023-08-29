@@ -1,4 +1,5 @@
 import helper
+import datetime
 from flask import Flask, request, Response, render_template, redirect, url_for
 app = Flask(__name__)
 
@@ -11,7 +12,8 @@ def index():
 @app.route('/add', methods=["POST"])
 def add():
     text = request.form.get("text")
-    helper.add(text)
+    date = request.form.get("date")
+    helper.add(text, datetime.datetime.strptime(date, "%Y-%m-%d"))
     return redirect(url_for("index"))
 
 
