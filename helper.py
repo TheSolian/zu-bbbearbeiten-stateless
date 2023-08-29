@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+import datetime
 
 items = []
 
@@ -6,12 +7,13 @@ items = []
 @dataclass
 class Item:
     text: str
+    date: datetime.date
     isCompleted: bool = False
 
 
-def add(text):
+def add(text, date):
     text = text.replace('b', 'bbb').replace('B', 'Bbb')
-    items.append(Item(text))
+    items.append(Item(text, date))
 
 
 def get_all():
