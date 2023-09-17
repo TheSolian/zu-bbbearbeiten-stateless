@@ -2,4 +2,4 @@
 
 Beispiel-Applikation für das Modul 324
 
-### Code Coverage
+## Code Coverage
