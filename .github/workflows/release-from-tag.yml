@@ -22,3 +22,8 @@ jobs:
         with:
           prerelease: 'false'
           reactions: heart,rocket,eyes
+
+      - name: Upload
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release upload ${{ github.ref_name }} ./dist/main.exe
