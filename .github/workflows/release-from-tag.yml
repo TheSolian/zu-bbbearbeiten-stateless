@@ -23,6 +23,10 @@ jobs:
           prerelease: 'false'
           reactions: heart,rocket,eyes
 
+      - name: Generate executable
+        run: |
+          pyinstaller -F --add-data "templates;templates" --add-data "helper.py;." main.py
+
       - name: Upload
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
