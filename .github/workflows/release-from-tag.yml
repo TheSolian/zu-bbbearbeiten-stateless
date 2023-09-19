@@ -23,6 +23,10 @@ jobs:
           prerelease: 'false'
           reactions: heart,rocket,eyes
 
+      - name: Install dependecies
+        run: |
+          pip install -m pyinstaller
+
       - name: Generate executable
         run: |
           pyinstaller -F --add-data "templates;templates" --add-data "helper.py;." main.py
