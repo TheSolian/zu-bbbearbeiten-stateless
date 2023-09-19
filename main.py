@@ -27,7 +27,6 @@ def update(index):
     return redirect(url_for("index"))
 
 
-# lol
 @app.route("/download")
 def get_csv():
     return Response(
