@@ -29,7 +29,7 @@ jobs:
 
       - name: Generate executable
         run: |
-          pyinstaller -F --add-data "templates;templates" --add-data "helper.py;." main.py
+          pyinstaller -F --add-data "templates:templates" --add-data "helper.py:." main.py
 
       - name: Upload
         env:
