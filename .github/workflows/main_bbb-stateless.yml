@@ -6,8 +6,8 @@ name: Build and deploy Python app to Azure Web App - bbb-stateless
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - "*"
   workflow_dispatch:
 
 jobs:
@@ -30,7 +30,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
         
-      # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
+      - name: Test with pytest
+        run: |
+          pytest
       
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v2
